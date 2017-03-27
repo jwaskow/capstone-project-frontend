@@ -2,7 +2,7 @@
 
 ### Wireframe
 
-![Wireframe](http://i.imgur.com/BVgykLC.png)
+![Wireframe](http://i.imgur.com/Knho4Fg.jpg)
 
 
 ### User Stories
