@@ -34,13 +34,13 @@ const createSuccess = () => {
 //   $('#tea-message').text('Tea Updated.');
 // };
 //
-// const destroySuccess = () => {
-//   $('#tea-message').text('Tea Deleted.');
-// };
+const destroySuccess = () => {
+  $('#tea-message').text('Tea Deleted.')
+}
 
 module.exports = {
   createSuccess,
-  indexSuccess
+  indexSuccess,
   // updateSuccess,
-  // destroySuccess,
+  destroySuccess
 }

@@ -3,7 +3,6 @@
 const teaApi = require('../tea/api')
 const teaUi = require('../tea/ui')
 
-
 const success = () => {
   $('#status-box').text('Action Successful')
 }

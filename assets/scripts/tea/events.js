@@ -33,15 +33,15 @@ const onCreateTeas = function (event) {
 //   .catch(ui.failure)
 // }
 //
-// const onDestroyTea = function (event) {
-//   event.preventDefault()
-//   const id = event.target.getAttribute('data-id')
-//   api.destroyTea(id)
-//   .then(ui.destroySuccess)
-//   .then(api.indexTeas)
-//   .then(ui.indexSuccess)
-//   .catch(ui.failure)
-// }
+const onDestroyTea = function (event) {
+  event.preventDefault()
+  const id = event.target.getAttribute('data-id')
+  api.destroyTea(id)
+  .then(ui.destroySuccess)
+  .then(api.indexTeas)
+  .then(ui.indexSuccess)
+  .catch(ui.failure)
+}
 
 // const teaDropdownToggle = function (event) {
 //   $(event.target).toggleClass('glyphicon-menu-down');
@@ -52,7 +52,7 @@ const addTeaHandlers = function () {
   $('#index-tea').on('click', onIndexTeas)
   $('#create-tea').on('submit', onCreateTeas)
   // $('#content').on('submit', '#update-tea', onUpdateTea);
-  // $('#content').on('click', '#delete-tea', onDestroyTea);
+  $('#index-tea-container').on('click', '#delete-tea', onDestroyTea)
   // $('#content').on('click', '#dropdown-tea', teaDropdownToggle);
 }
 
