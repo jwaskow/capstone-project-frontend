@@ -1,5 +1,9 @@
 'use strict'
 
+const teaApi = require('../tea/api')
+const teaUi = require('../tea/ui')
+
+
 const success = () => {
   $('#status-box').text('Action Successful')
 }
@@ -31,6 +35,8 @@ const signInSuccess = () => {
   $('.signin-field').val('')
   $('.signup-field').val('')
   $('#create-tea').show()
+  teaApi.indexTeas()
+    .then(teaUi.indexSuccess)
 }
 
 const signInFail = () => {
@@ -56,6 +62,7 @@ const signOutSuccess = () => {
   $('#sign-out').addClass('hidden')
   $('#collapseChangePass').collapse('hide')
   $('#create-tea').hide()
+  $('#index-tea-container').html('')
 }
 
 module.exports = {

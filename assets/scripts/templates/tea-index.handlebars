@@ -1,0 +1,15 @@
+
+{{#each teas as |tea|}}
+<div data-id="{{tea.id}}">
+  <!-- Are we going to display id? -->
+  <div class="handlebars-container">
+    <span class="tea-display-titles">Name: </span><p class="name tea-display-group">{{tea.name}}</p>
+    <span class="tea-display-titles">Type: </span><p class="type tea-display-group">{{tea.type}}</p>
+    <span class="tea-display-titles">Steep Time: </span><p class="steepTime tea-display-group">{{tea.steepTime}}</p>
+    <span class="tea-display-titles">Description: </span><p class="description tea-display-group">{{tea.description}}</p>
+  </div>
+
+</div>
+
+
+{{/each}}
