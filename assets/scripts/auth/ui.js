@@ -30,6 +30,7 @@ const signInSuccess = () => {
   $('#collapseSignIn').collapse('hide')
   $('.signin-field').val('')
   $('.signup-field').val('')
+  $('#create-tea').show()
 }
 
 const signInFail = () => {
@@ -54,6 +55,7 @@ const signOutSuccess = () => {
   $('#changePassButton').addClass('hidden')
   $('#sign-out').addClass('hidden')
   $('#collapseChangePass').collapse('hide')
+  $('#create-tea').hide()
 }
 
 module.exports = {

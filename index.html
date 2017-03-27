@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tea Time</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>Tea Time</h1>
 
 <div id="authContainer">
   <div id="authButtonGroup">
@@ -95,6 +95,33 @@
 </div>
 
 <div id="status-box"></div>
+
+<form id="create-tea">
+  <div class="form-group">
+    <span>Name</span>
+    <input type="text" name="tea[name]" maxlength="150" placeholder="Name">
+    <span>Type</span>
+    <select name="tea[type]">
+      <option value="black">Black</option>
+      <option value="green">Green</option>
+      <option value="white">White</option>
+      <option value="other">Other</option>
+    </select>
+    <span>Steep Time</span>
+    <select name="tea[steepTime]">
+      <option value="30">30 seconds</option>
+      <option value="60">1 minute</option>
+      <option value="90">1 minute 30 seconds</option>
+      <option value="120">2 minutes</option>
+      <option value="150">2 minutes 30 seconds</option>
+      <option value="180">3 minutes</option>
+    </select>
+    <span>Description</span>
+    <input type="text" name="tea[description]" placeholder="taste, color..." maxlength="500">
+    <br>
+  </div>
+  <button type="submit" class="btn btn-success btn-font" id="add-blog-btn">Add Tea</button>
+</form>
 
     </body>
 </html>
