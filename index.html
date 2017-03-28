@@ -96,16 +96,18 @@
 
 <div id="status-box"></div>
 
+<div id="tea-message"></div>
+
 <form id="create-tea">
   <div class="form-group">
     <span>Name</span>
-    <input type="text" name="tea[name]" maxlength="150" placeholder="Name">
+    <input type="text" id="tea-name" name="tea[name]" maxlength="150" placeholder="Name">
     <span>Type</span>
     <select name="tea[type]">
-      <option value="black">Black</option>
-      <option value="green">Green</option>
-      <option value="white">White</option>
-      <option value="other">Other</option>
+      <option value="Black">Black</option>
+      <option value="Green">Green</option>
+      <option value="White">White</option>
+      <option value="Other">Other</option>
     </select>
     <span>Steep Time</span>
     <select name="tea[steepTime]">
@@ -115,13 +117,17 @@
       <option value="120">2 minutes</option>
       <option value="150">2 minutes 30 seconds</option>
       <option value="180">3 minutes</option>
+      <option value="210">3 minutes 30 seconds</option>
+      <option value="240">4 minutes</option>
     </select>
     <span>Description</span>
-    <input type="text" name="tea[description]" placeholder="taste, color..." maxlength="500">
+    <input type="text" name="tea[description]" id="tea-description" placeholder="taste, color..." maxlength="500">
     <br>
   </div>
-  <button type="submit" class="btn btn-success btn-font" id="add-blog-btn">Add Tea</button>
+  <button type="submit" class="btn btn-success btn-font" id="add-tea-btn">Add Tea</button>
 </form>
+
+<div id="index-tea-container"></div>
 
     </body>
 </html>
