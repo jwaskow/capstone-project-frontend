@@ -22,16 +22,19 @@ const onCreateTeas = function (event) {
   .catch(ui.failure)
 }
 
-// const onUpdateTea = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   const id = event.target.getAttribute('data-id')
-//   api.updateTea(id, data)
-//   .then(ui.updateSuccess)
-//   .then(api.indexTeas)
-//   .then(ui.indexSuccess)
-//   .catch(ui.failure)
-// }
+const onUpdateTea = function (event) {
+  event.preventDefault()
+  console.log('input clicked')
+  const id = event.target.getAttribute('data-id')
+  console.log(id)
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.updateTea(id, data)
+  .then(ui.updateSuccess)
+  .then(api.indexTeas)
+  .then(ui.indexSuccess)
+  .catch(ui.failure)
+}
 
 const onDestroyTea = function (event) {
   event.preventDefault()
@@ -58,7 +61,7 @@ const teaRowToggle = function (event) {
 const addTeaHandlers = function () {
   $('#index-tea').on('click', onIndexTeas)
   $('#create-tea').on('submit', onCreateTeas)
-  // $('#content').on('submit', '#update-tea', onUpdateTea);
+  $('#index-tea-container').on('submit', '#update-tea', onUpdateTea)
   $('#index-tea-container').on('click', '#delete-tea', onDestroyTea)
   $('#index-tea-container').on('click', '#edit-tea-row', teaRowToggle)
   $('#index-tea-container').on('click', '#dropdown-tea', teaDropdownToggle)
@@ -67,6 +70,6 @@ const addTeaHandlers = function () {
 module.exports = {
   onCreateTeas,
   onIndexTeas,
-  // onUpdateTea,
-  addTeaHandlers,
-};
+  onUpdateTea,
+  addTeaHandlers
+}

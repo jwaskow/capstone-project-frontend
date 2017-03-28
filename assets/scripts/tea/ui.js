@@ -35,11 +35,11 @@ const createSuccess = () => {
   $('#tea-name').val('')
   $('#tea-description').val('')
 }
-//
-// const updateSuccess = () => {
-//   $('#tea-message').text('Tea Updated.');
-// };
-//
+
+const updateSuccess = () => {
+  $('#tea-message').text('Tea Updated.')
+}
+
 const destroySuccess = () => {
   $('#tea-message').text('Tea Deleted.')
 }
@@ -47,6 +47,6 @@ const destroySuccess = () => {
 module.exports = {
   createSuccess,
   indexSuccess,
-  // updateSuccess,
+  updateSuccess,
   destroySuccess
 }

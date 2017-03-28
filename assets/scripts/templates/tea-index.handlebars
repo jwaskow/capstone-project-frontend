@@ -22,13 +22,13 @@
 
 </div>
 
-       <form class="teas" id="update-tea{{tea.id}}" data-id="{{tea.id}}">
+<td colspan="4" class="tea-update-form tea-update-form{{tea.id}}">
+       <form class="teas" id="update-tea" data-id="{{tea.id}}">
          <div class="form-group">
-           <td class="tea-update-form tea-update-form{{tea.id}}">
+
            <span>Name</span>
-           <input type="text" id="tea-name-update" name="tea[name]" maxlength="150" placeholder="Name">
-         </td>
-         <td class="tea-update-form tea-update-form{{tea.id}}">
+           <input type="text" id="tea-name-update" name="tea[name]" value="{{tea.name}}" maxlength="150" placeholder="Name">
+
            <span>Type</span>
            <select name="tea[type]">
              <option value="Black">Black</option>
@@ -36,8 +36,7 @@
              <option value="White">White</option>
              <option value="Other">Other</option>
            </select>
-         </td>
-         <td class="tea-update-form tea-update-form{{tea.id}}">
+
            <span>Steep Time</span>
            <select name="tea[steepTime]">
              <option value="30">30 seconds</option>
@@ -49,15 +48,19 @@
              <option value="210">3 minutes 30 seconds</option>
              <option value="240">4 minutes</option>
            </select>
-         </td>
-         <td class="tea-update-form tea-update-form{{tea.id}}">
+
            <span>Description</span>
-           <input type="text" name="tea[description]" id="tea-description-update" placeholder="taste, color..." maxlength="500">
-         </td>
+           <input type="text" name="tea[description]" id="tea-description-update" value="{{tea.description}}" placeholder="taste, color..." maxlength="500">
+
          </div>
+         <span></span>
+           <button type="submit" data-id="{{tea.id}}" id="update-tea-btn" class="btn btn-success update-tea-btn update-tea-btn{{tea.id}}">Submit Edit</button>
+
+
 
        </form>
-       <div id="clear-div"></div>
+       </td>
+       <!-- <div id="clear-div"></div> -->
 
 
      <!-- <div class="collapse update-collapse" id="collapseUpdate{{tea.id}}">
@@ -65,12 +68,15 @@
       </div>
       </div> -->
 
-    <td><button type="button" id="delete-tea" data-id="{{tea.id}}" class="btn btn-danger btn-xs glyphicon glyphicon-trash"> Delete</button></td>
+    <td><button type="button" id="delete-tea" data-id="{{tea.id}}" class="btn btn-danger btn-xs glyphicon glyphicon-trash"> Delete</button>
+    </td>
   </tr>
   <tr>
-      <td colspan="5" class="hiddenRow"><div class="accordian-body collapse" id="collapseUpdate{{tea.id}}"> <button id="edit-tea-row" data-id="{{tea.id}}" class="btn btn-success glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit">
+      <td colspan="5" class="hiddenRow">
+        <div class="accordian-body collapse" id="collapseUpdate{{tea.id}}">
+        <button id="edit-tea-row" data-id="{{tea.id}}" class="btn btn-success glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit">
       </button>
-      <button type="submit" id="update-tea-btn" class="btn btn-success update-tea-btn update-tea-btn{{tea.id}}" data-toggle="tooltip" data-placement="bottom" title="Edit">Confirm Edit</button>
+      <!-- <input type="submit" form="update-tea{{tea.id}}" data-id="{{tea.id}}" id="update-tea-btn" class="btn btn-success update-tea-btn update-tea-btn{{tea.id}}" data-toggle="tooltip" data-placement="bottom" title="Edit"> -->
     </div>
     </td>
   </tr>
