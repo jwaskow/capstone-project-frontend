@@ -33,3 +33,12 @@ table, th {
 tr:hover {
   background-color: rgb(212, 212, 212);
 }
+
+.gly-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  transform: scale(1, -1);
+}
+
+.hiddenRow {
+    padding: 0 !important;
+}

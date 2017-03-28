@@ -16,12 +16,18 @@ const indexSuccess = function (data) {
       data.teas[i].steepTime = '2 minutes 30 seconds'
     } else if (data.teas[i].steepTime === 180) {
       data.teas[i].steepTime = '3 minutes'
+    } else if (data.teas[i].steepTime === 210) {
+      data.teas[i].steepTime = '3 minutes 30 seconds'
+    } else if (data.teas[i].steepTime === 240) {
+      data.teas[i].steepTime = '4 minutes'
     }
   }
   const teasIndexHtml = teaHandlebars({
     teas: data.teas
   })
   $('#index-tea-container').html(teasIndexHtml)
+  $('.tea-update-form').hide()
+  $('.update-tea-btn').hide()
 }
 
 const createSuccess = () => {
