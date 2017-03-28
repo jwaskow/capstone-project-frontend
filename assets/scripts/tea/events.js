@@ -58,6 +58,26 @@ const teaRowToggle = function (event) {
   $('.update-tea-btn' + id).toggle()
 }
 
+const startTimer = function (duration, display) {
+  let timer = duration, minutes, seconds
+  setInterval(function () {
+    minutes = parseInt(timer / 60, 10)
+    seconds = parseInt(timer % 60, 10)
+
+    minutes = minutes < 10 ? '0' + minutes : minutes
+    seconds = seconds < 10 ? '0' + seconds : seconds
+
+    display.text(minutes + ':' + seconds)
+
+    if (--timer < 0) {
+      $('#time').text('0:00')
+      $('#timer-message').text('DING DING')
+    }
+  }, 1000)
+}
+
+startTimer(10, $('#time'))
+
 const addTeaHandlers = function () {
   $('#index-tea').on('click', onIndexTeas)
   $('#create-tea').on('submit', onCreateTeas)

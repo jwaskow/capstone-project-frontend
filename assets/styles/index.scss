@@ -42,3 +42,17 @@ tr:hover {
 .hiddenRow {
     padding: 0 !important;
 }
+
+#countdown-timer {
+  font-size: 36px;
+}
+
+#timer-message {
+  font-size: 48px;
+  color: green;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
