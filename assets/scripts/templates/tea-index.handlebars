@@ -13,12 +13,15 @@
 <div data-id="{{tea.id}}">
   <!-- Are we going to display id? -->
   <div class="handlebars-container col-xs-12">
-    <tr data-toggle="collapse" data-target="#collapseUpdate{{tea.id}}">
+    <tr>
       <div id="tea-row{{tea.id}}">
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="name tea-display-group">{{tea.name}}</p></td>
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="type tea-display-group">{{tea.type}}</p></td>
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="steepTime tea-display-group">{{tea.steepTime}}</p></td>
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="description tea-display-group">{{tea.description}}</p></td>
+    <td class="tea-display-row tea-display-row{{tea.id}}"><button id="steep-btn" class="tea-display-group btn" data-id="{{tea.id}}">Steep</button>
+      <button id="options-btn" class="tea-display-group btn glyphicon glyphicon-menu-down" data-id="{{tea.id}}" data-toggle="collapse" data-target="#collapseUpdate{{tea.id}}"></button>
+    <button type="button" id="delete-tea" data-id="{{tea.id}}" class="btn btn-danger btn-xs glyphicon glyphicon-trash"> Delete</button></td>
 
 </div>
 
@@ -68,8 +71,6 @@
       </div>
       </div> -->
 
-    <td><button type="button" id="delete-tea" data-id="{{tea.id}}" class="btn btn-danger btn-xs glyphicon glyphicon-trash"> Delete</button>
-    </td>
   </tr>
   <tr>
       <td colspan="5" class="hiddenRow">

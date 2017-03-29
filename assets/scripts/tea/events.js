@@ -47,7 +47,8 @@ const onDestroyTea = function (event) {
 }
 
 const teaDropdownToggle = function (event) {
-  $(event.target).toggleClass('gly-flip-vertical')
+  $(event.target).toggleClass('glyphicon-menu-down')
+  $(event.target).toggleClass('glyphicon-menu-up')
 }
 
 const teaRowToggle = function (event) {
@@ -59,12 +60,14 @@ const teaRowToggle = function (event) {
 }
 
 const startTimer = function (duration, display) {
-  let timer = duration, minutes, seconds
+  let timer = duration
+  let minutes
+  let seconds
   setInterval(function () {
     minutes = parseInt(timer / 60, 10)
     seconds = parseInt(timer % 60, 10)
 
-    minutes = minutes < 10 ? '0' + minutes : minutes
+    minutes = minutes < 10 ? minutes : minutes
     seconds = seconds < 10 ? '0' + seconds : seconds
 
     display.text(minutes + ':' + seconds)
@@ -76,7 +79,14 @@ const startTimer = function (duration, display) {
   }, 1000)
 }
 
-startTimer(10, $('#time'))
+const loadTime = function (event) {
+  event.preventDefault()
+  const id = event.target.getAttribute('data-id')
+  api.showTea(id)
+  .then(function (data) {
+    startTimer(data.tea.steepTime, $('#time'))
+  })
+}
 
 const addTeaHandlers = function () {
   $('#index-tea').on('click', onIndexTeas)
@@ -84,7 +94,8 @@ const addTeaHandlers = function () {
   $('#index-tea-container').on('submit', '#update-tea', onUpdateTea)
   $('#index-tea-container').on('click', '#delete-tea', onDestroyTea)
   $('#index-tea-container').on('click', '#edit-tea-row', teaRowToggle)
-  $('#index-tea-container').on('click', '#dropdown-tea', teaDropdownToggle)
+  $('#index-tea-container').on('click', '#options-btn', teaDropdownToggle)
+  $('#index-tea-container').on('click', '#steep-btn', loadTime)
 }
 
 module.exports = {

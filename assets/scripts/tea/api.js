@@ -14,6 +14,16 @@ const indexTeas = function () {
   })
 }
 
+const showTea = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/teas/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 const createTea = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/teas',
@@ -48,6 +58,7 @@ const destroyTea = function (id) {
 
 module.exports = {
   indexTeas,
+  showTea,
   createTea,
   updateTea,
   destroyTea
