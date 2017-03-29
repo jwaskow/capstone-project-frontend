@@ -12,7 +12,6 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Tea Time</h1>
 
 <div id="authContainer">
   <div id="authButtonGroup">
@@ -94,12 +93,16 @@
   </div>
 </div>
 
+<h1>Tea Time</h1>
+
 <div id="status-box"></div>
 
 <div id="tea-message"></div>
 
+<br>
+
 <form id="create-tea">
-  <div class="form-group">
+  <div class="form-group" id="create-tea-container">
     <span>Name</span>
     <input type="text" id="tea-name" name="tea[name]" maxlength="150" placeholder="Name">
     <span>Type</span>
@@ -124,15 +127,20 @@
     <input type="text" name="tea[description]" id="tea-description" placeholder="taste, color..." maxlength="500">
     <br>
   </div>
+<br>
   <button type="submit" class="btn btn-success btn-font" id="add-tea-btn">Add Tea</button>
 </form>
 
 <div id="index-tea-container"></div>
 
-<div id="countdown-timer">Your tea will be ready in <span id="time"></span></div>
+<div id="timer-container">
+<div id="countdown-timer"><span id="timer-main-text"></span><span id="time"></span></div>
 <button id="cancel-timer-btn" class="btn">Cancel Timer</button>
 <div id="timer-done-message"></div>
 <div id="timer-wait-message"></div>
+</div>
+
+<div id="clear-space"></div>
 
     </body>
 </html>

@@ -79,8 +79,9 @@ const startTimer = function (duration, display) {
 
     if (--timer < 0) {
       display.text('')
-      $('#timer-done-message').text('TEA TIME')
+      $('#timer-done-message').text('TEA   TIME')
       $('#timer-wait-message').text('')
+      $('#timer-main-text').text('Your tea is ready!')
       endTimer(timerLogic)
       isRunning = false
       return isRunning
@@ -101,6 +102,8 @@ const loadTime = function (event) {
   .then(function (data) {
     if (isRunning === false) {
       $('#timer-done-message').text('')
+      $('#timer-main-text').text('Your tea will be ready in ')
+      $('#cancel-timer-btn').show()
       startTimer(data.tea.steepTime, $('#time'))
     } else {
       $('#timer-wait-message').text('Please cancel the current timer or wait for it to finish')
@@ -113,9 +116,11 @@ const cancelTimer = function (event) {
   event.preventDefault()
   endTimer(timerLogic)
   isRunning = false
+  $('#timer-main-text').text('')
   $('#time').text('')
   $('#timer-done-message').text('')
   $('#timer-wait-message').text('')
+  $('#cancel-timer-btn').hide()
 }
 
 const addTeaHandlers = function () {
