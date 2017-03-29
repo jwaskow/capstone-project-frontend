@@ -6,7 +6,7 @@
     <th>Type</th>
     <th>Steep Time</th>
     <th>Description </th>
-    <th>Edit / Delete</th>
+    <th>Steep / Options</th>
   </tr>
 
 {{#each teas as |tea|}}
@@ -25,15 +25,15 @@
 
 </div>
 
-<td colspan="4" class="tea-update-form tea-update-form{{tea.id}}">
+<td colspan="5" class="tea-update-form tea-update-form{{tea.id}}">
        <form class="teas" id="update-tea" data-id="{{tea.id}}">
          <div class="form-group">
 
            <span>Name</span>
-           <input type="text" id="tea-name-update" name="tea[name]" value="{{tea.name}}" maxlength="150" placeholder="Name">
+           <input type="text" class="update-cell" id="tea-name-update" name="tea[name]" value="{{tea.name}}" maxlength="150" placeholder="Name">
 
            <span>Type</span>
-           <select name="tea[type]">
+           <select class="update-cell" name="tea[type]">
              <option value="Black">Black</option>
              <option value="Green">Green</option>
              <option value="White">White</option>
@@ -41,7 +41,7 @@
            </select>
 
            <span>Steep Time</span>
-           <select name="tea[steepTime]">
+           <select class="update-cell" name="tea[steepTime]">
              <option value="30">30 seconds</option>
              <option value="60">1 minute</option>
              <option value="90">1 minute 30 seconds</option>
@@ -53,7 +53,7 @@
            </select>
 
            <span>Description</span>
-           <input type="text" name="tea[description]" id="tea-description-update" value="{{tea.description}}" placeholder="taste, color..." maxlength="500">
+           <input type="text" name="tea[description]" id="tea-description-update" class="update-cell" value="{{tea.description}}" placeholder="taste, color..." maxlength="500">
 
          </div>
          <span></span>

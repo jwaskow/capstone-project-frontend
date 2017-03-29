@@ -20,6 +20,10 @@ $(() => {
     $('#authButtonGroup').find('.collapse.in').collapse('hide')
   })
   $('#create-tea').hide()
+  $('#countdown-timer').hide()
+  $('#timer-done-message').hide()
+  $('#timer-wait-message').hide()
+  $('#cancel-timer-btn').hide()
 })
 
 // use require without a reference to ensure a file is bundled

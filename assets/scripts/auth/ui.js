@@ -34,6 +34,10 @@ const signInSuccess = () => {
   $('.signin-field').val('')
   $('.signup-field').val('')
   $('#create-tea').show()
+  $('#countdown-timer').show()
+  $('#timer-done-message').show()
+  $('#timer-wait-message').show()
+  $('#cancel-timer-btn').show()
   teaApi.indexTeas()
     .then(teaUi.indexSuccess)
 }
@@ -62,6 +66,10 @@ const signOutSuccess = () => {
   $('#collapseChangePass').collapse('hide')
   $('#create-tea').hide()
   $('#index-tea-container').html('')
+  $('#countdown-timer').hide()
+  $('#timer-done-message').hide()
+  $('#timer-wait-message').hide()
+  $('#cancel-timer-btn').hide()
 }
 
 module.exports = {
