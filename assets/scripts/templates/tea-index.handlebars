@@ -6,31 +6,34 @@
     <th>Type</th>
     <th>Steep Time</th>
     <th>Description </th>
-    <th>Edit / Delete</th>
+    <th>Steep / Options</th>
   </tr>
 
 {{#each teas as |tea|}}
 <div data-id="{{tea.id}}">
   <!-- Are we going to display id? -->
   <div class="handlebars-container col-xs-12">
-    <tr data-toggle="collapse" data-target="#collapseUpdate{{tea.id}}">
+    <tr>
       <div id="tea-row{{tea.id}}">
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="name tea-display-group">{{tea.name}}</p></td>
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="type tea-display-group">{{tea.type}}</p></td>
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="steepTime tea-display-group">{{tea.steepTime}}</p></td>
     <td class="tea-display-row tea-display-row{{tea.id}}"><p class="description tea-display-group">{{tea.description}}</p></td>
+    <td class="tea-display-row tea-display-row{{tea.id}}"><button id="steep-btn" class="  tea-display-group btn" data-id="{{tea.id}}">Steep</button>
+      <button id="options-btn" class="tea-display-group btn glyphicon glyphicon-menu-down" data-id="{{tea.id}}" data-toggle="collapse" data-target="#collapseUpdate{{tea.id}}"></button>
+    </td>
 
 </div>
 
-<td colspan="4" class="tea-update-form tea-update-form{{tea.id}}">
+<td colspan="5" class="tea-update-form tea-update-form{{tea.id}}">
        <form class="teas" id="update-tea" data-id="{{tea.id}}">
          <div class="form-group">
 
            <span>Name</span>
-           <input type="text" id="tea-name-update" name="tea[name]" value="{{tea.name}}" maxlength="150" placeholder="Name">
+           <input type="text" class="update-cell" id="tea-name-update" name="tea[name]" value="{{tea.name}}" maxlength="150" placeholder="Name">
 
            <span>Type</span>
-           <select name="tea[type]">
+           <select class="update-cell" name="tea[type]">
              <option value="Black">Black</option>
              <option value="Green">Green</option>
              <option value="White">White</option>
@@ -38,7 +41,7 @@
            </select>
 
            <span>Steep Time</span>
-           <select name="tea[steepTime]">
+           <select class="update-cell" name="tea[steepTime]">
              <option value="30">30 seconds</option>
              <option value="60">1 minute</option>
              <option value="90">1 minute 30 seconds</option>
@@ -50,7 +53,7 @@
            </select>
 
            <span>Description</span>
-           <input type="text" name="tea[description]" id="tea-description-update" value="{{tea.description}}" placeholder="taste, color..." maxlength="500">
+           <input type="text" name="tea[description]" id="tea-description-update" class="update-cell" value="{{tea.description}}" placeholder="taste, color..." maxlength="500">
 
          </div>
          <span></span>
@@ -68,13 +71,12 @@
       </div>
       </div> -->
 
-    <td><button type="button" id="delete-tea" data-id="{{tea.id}}" class="btn btn-danger btn-xs glyphicon glyphicon-trash"> Delete</button>
-    </td>
   </tr>
   <tr>
       <td colspan="5" class="hiddenRow">
-        <div class="accordian-body collapse" id="collapseUpdate{{tea.id}}">
-        <button id="edit-tea-row" data-id="{{tea.id}}" class="btn btn-success glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit">
+        <div class="accordian-body collapse options-row" id="collapseUpdate{{tea.id}}">
+        <button id="edit-tea-row" data-id="{{tea.id}}" class="edit-delete-btns btn btn-success btn-xs glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit"> Edit
+        <button type="button" id="delete-tea" data-id="{{tea.id}}" class="btn btn-danger btn-xs glyphicon glyphicon-trash"> Delete</button>
       </button>
       <!-- <input type="submit" form="update-tea{{tea.id}}" data-id="{{tea.id}}" id="update-tea-btn" class="btn btn-success update-tea-btn update-tea-btn{{tea.id}}" data-toggle="tooltip" data-placement="bottom" title="Edit"> -->
     </div>

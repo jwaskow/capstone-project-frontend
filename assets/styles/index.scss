@@ -42,3 +42,33 @@ tr:hover {
 .hiddenRow {
     padding: 0 !important;
 }
+
+#countdown-timer {
+  font-size: 36px;
+}
+
+#timer-done-message {
+  font-size: 48px;
+  color: green;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+#time {
+  color: rgb(92, 78, 255);
+}
+
+.edit-delete-btns {
+  margin: 3px 10px;
+}
+
+.options-row {
+  background-color: rgb(215, 190, 164);
+}
+
+.update-cell {
+  margin-right: 20px;
+}
