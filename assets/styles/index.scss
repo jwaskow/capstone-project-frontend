@@ -47,7 +47,7 @@ tr:hover {
   font-size: 36px;
 }
 
-#timer-message {
+#timer-done-message {
   font-size: 48px;
   color: green;
   animation: blinker 1s linear infinite;
@@ -59,4 +59,12 @@ tr:hover {
 
 #time {
   color: rgb(92, 78, 255);
+}
+
+.edit-delete-btns {
+  margin: 3px 10px;
+}
+
+.options-row {
+  background-color: rgb(215, 190, 164);
 }

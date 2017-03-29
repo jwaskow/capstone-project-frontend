@@ -59,24 +59,36 @@ const teaRowToggle = function (event) {
   $('.update-tea-btn' + id).toggle()
 }
 
+let isRunning = false
+
 const startTimer = function (duration, display) {
+  isRunning = true
   let timer = duration
   let minutes
   let seconds
-  setInterval(function () {
+
+  let timerLogic = function () {
     minutes = parseInt(timer / 60, 10)
     seconds = parseInt(timer % 60, 10)
 
-    minutes = minutes < 10 ? minutes : minutes
     seconds = seconds < 10 ? '0' + seconds : seconds
 
     display.text(minutes + ':' + seconds)
 
     if (--timer < 0) {
-      $('#time').text('0:00')
-      $('#timer-message').text('DING DING')
+      display.text('')
+      $('#timer-done-message').text('TEA TIME')
+      $('#timer-wait-message').text('')
+      endTimer(timerLogic)
+      isRunning = false
+      return isRunning
     }
-  }, 1000)
+  }
+  timerLogic = setInterval(timerLogic, 1000)
+}
+
+const endTimer = function (timerLogic) {
+  clearInterval(timerLogic)
 }
 
 const loadTime = function (event) {
@@ -84,7 +96,14 @@ const loadTime = function (event) {
   const id = event.target.getAttribute('data-id')
   api.showTea(id)
   .then(function (data) {
-    startTimer(data.tea.steepTime, $('#time'))
+    console.log(isRunning)
+    if (isRunning === false) {
+      $('#timer-done-message').text('')
+      startTimer(data.tea.steepTime, $('#time'))
+    } else {
+      $('#timer-wait-message').text('Please wait until the current timer finishes')
+      return
+    }
   })
 }
 
@@ -96,6 +115,7 @@ const addTeaHandlers = function () {
   $('#index-tea-container').on('click', '#edit-tea-row', teaRowToggle)
   $('#index-tea-container').on('click', '#options-btn', teaDropdownToggle)
   $('#index-tea-container').on('click', '#steep-btn', loadTime)
+  $('#index-tea-container').on('click', '.steep-btn', endTimer)
 }
 
 module.exports = {
