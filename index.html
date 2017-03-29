@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tea Time</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,14 +12,127 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>Tea Time</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+<div id="authContainer">
+  <div id="authButtonGroup">
+  <button class="btn btn-primary btn-font" id="signUpButton" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
+    Sign Up
+  </button>
+  <button class="btn btn-primary btn-font" id="signInButton" type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
+    Sign In
+  </button>
+  <button class="btn btn-primary hidden btn-font" id="changePassButton" type="button" data-toggle="collapse" data-target="#collapseChangePass" aria-expanded="false" aria-controls="collapseChangePass">
+    Change Password
+  </button>
+  <button type="button" class="btn btn-primary hidden btn-font" id="sign-out">
+    Sign Out
+  </button>
+
+    <div class="accordion-group">
+      <div class="collapse" id="collapseSignUp">
+        <div class="well">
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up</legend>
+              <label>
+            Email
+            <input type="text" maxlength="100" id="account-name" class="signup-field" name="credentials[email]">
+          </label>
+              <label>
+            Password
+            <input type="password" maxlength="100" class="signup-field" name="credentials[password]">
+          </label>
+              <label>
+            Password Confirmation
+            <input type="password" maxlength="100" class="signup-field" name="credentials[password_confirmation]">
+          </label>
+              <input type="submit" name="submit" value="Sign Up">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="collapse" id="collapseSignIn">
+        <div class="well">
+          <form id="sign-in">
+           <fieldset>
+             <legend>Sign In</legend>
+             <label>
+             Email
+             <input type="text" class="signin-field" maxlength="100" id="account-name-signin" name="credentials[email]">
+           </label>
+             <label>
+             Password
+             <input type="password" class="signin-field" maxlength="100" name="credentials[password]">
+           </label>
+             <input type="submit" name="submit" maxlength="100" value="Sign In">
+           </fieldset>
+         </form>
+        </div>
+      </div>
+
+      <div class="collapse" id="collapseChangePass">
+        <div class="well">
+          <form id="change-password">
+           <fieldset>
+             <legend>Change Password</legend>
+             <label>
+             Current Password
+             <input type="password" class="change-pass-field" maxlength="100" name="passwords[old]">
+           </label>
+             <label>
+             New Password
+             <input type="password" class="change-pass-field" maxlength="100" name="passwords[new]">
+           </label>
+             <input type="submit" name="submit" value="Change Password">
+           </fieldset>
+         </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="status-box"></div>
+
+<div id="tea-message"></div>
+
+<form id="create-tea">
+  <div class="form-group">
+    <span>Name</span>
+    <input type="text" id="tea-name" name="tea[name]" maxlength="150" placeholder="Name">
+    <span>Type</span>
+    <select name="tea[type]">
+      <option value="Black">Black</option>
+      <option value="Green">Green</option>
+      <option value="White">White</option>
+      <option value="Other">Other</option>
+    </select>
+    <span>Steep Time</span>
+    <select name="tea[steepTime]">
+      <option value="30">30 seconds</option>
+      <option value="60">1 minute</option>
+      <option value="90">1 minute 30 seconds</option>
+      <option value="120">2 minutes</option>
+      <option value="150">2 minutes 30 seconds</option>
+      <option value="180">3 minutes</option>
+      <option value="210">3 minutes 30 seconds</option>
+      <option value="240">4 minutes</option>
+    </select>
+    <span>Description</span>
+    <input type="text" name="tea[description]" id="tea-description" placeholder="taste, color..." maxlength="500">
+    <br>
+  </div>
+  <button type="submit" class="btn btn-success btn-font" id="add-tea-btn">Add Tea</button>
+</form>
+
+<div id="index-tea-container"></div>
+
+<div id="countdown-timer">Your tea will be ready in <span id="time"></span></div>
+<button id="cancel-timer-btn" class="btn">Cancel Timer</button>
+<div id="timer-done-message"></div>
+<div id="timer-wait-message"></div>
+
     </body>
 </html>

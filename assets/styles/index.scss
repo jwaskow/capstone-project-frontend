@@ -1,2 +1,74 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.tea-display-group {
+  display: inline;
+}
+
+.tea-display-titles {
+  font-weight: bold;
+}
+
+.handlebars-container {
+  text-align: center;
+}
+
+#tea-table {
+  width: 100%;
+}
+
+th, td {
+    padding: 3px;
+}
+
+h1 {
+  text-align: center;
+}
+
+table, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr:hover {
+  background-color: rgb(212, 212, 212);
+}
+
+.gly-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  transform: scale(1, -1);
+}
+
+.hiddenRow {
+    padding: 0 !important;
+}
+
+#countdown-timer {
+  font-size: 36px;
+}
+
+#timer-done-message {
+  font-size: 48px;
+  color: green;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+#time {
+  color: rgb(92, 78, 255);
+}
+
+.edit-delete-btns {
+  margin: 3px 10px;
+}
+
+.options-row {
+  background-color: rgb(215, 190, 164);
+}
+
+.update-cell {
+  margin-right: 20px;
+}

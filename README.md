@@ -5,6 +5,7 @@
 ![Wireframe](http://i.imgur.com/Knho4Fg.jpg)
 
 
+
 ### User Stories
 
 As a user:
@@ -19,6 +20,7 @@ As a user:
 - I want to click a button next to a tea and have the timer load that tea’s steep time
 - I want to be able to update a tea on the list
 - I want to be able to delete teas from the list
+
 
 
 #### Stretch Goals:

@@ -10,5 +10,21 @@ $(() => {
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
+const authEvents = require('./auth/events.js')
+const teaEvents = require('./tea/events.js')
+
+$(() => {
+  authEvents.addHandlers()
+  teaEvents.addTeaHandlers()
+  $('#authButtonGroup').on('show.bs.collapse', '.collapse', function () {
+    $('#authButtonGroup').find('.collapse.in').collapse('hide')
+  })
+  $('#create-tea').hide()
+  $('#countdown-timer').hide()
+  $('#timer-done-message').hide()
+  $('#timer-wait-message').hide()
+  $('#cancel-timer-btn').hide()
+})
+
 // use require without a reference to ensure a file is bundled
 require('./example')
