@@ -37,7 +37,6 @@ const signInSuccess = () => {
   $('#countdown-timer').show()
   $('#timer-done-message').show()
   $('#timer-wait-message').show()
-  $('#cancel-timer-btn').show()
   teaApi.indexTeas()
     .then(teaUi.indexSuccess)
 }
