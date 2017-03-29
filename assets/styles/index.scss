@@ -25,13 +25,17 @@ h1 {
   text-align: center;
 }
 
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
 table, th {
-    border: 1px solid black;
-    border-collapse: collapse;
+    background: rgb(150, 176, 140);
 }
 
 tr:hover {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(197, 232, 202);
 }
 
 .gly-flip-vertical {
@@ -48,13 +52,33 @@ tr:hover {
 }
 
 #timer-done-message {
-  font-size: 48px;
+  font-size: 60px;
   color: green;
-  animation: blinker 1s linear infinite;
+  animation: seesaw 2s ease infinite, blinker 1.25s linear infinite, colorchange 2s ease infinite;
 }
 
 @keyframes blinker {
-  50% { opacity: 0; }
+  0% { opacity: 1;}
+  25% { opacity: .5; }
+  50% { opacity: 1;}
+  75% { opacity: .5; }
+  100% { opacity: 1;}
+}
+
+@keyframes colorchange {
+  0% { color: rgb(254, 239, 114);}
+  25% { color: rgb(224, 153, 65);}
+  50% { color: rgb(254, 239, 114);}
+  75% { color: rgb(131, 202, 58);}
+  100% { color: rgb(254, 239, 114);}
+}
+
+@keyframes seesaw {
+  0% { transform: rotateY(-30deg); }
+  25% { transform: rotate(7deg); }
+  50% { transform: rotateY(30deg); }
+  75% { transform: rotate(-7deg); }
+  100% { transform: rotateY(-30deg); }
 }
 
 #time {
@@ -62,13 +86,39 @@ tr:hover {
 }
 
 .edit-delete-btns {
-  margin: 3px 10px;
+  margin: 3px 50px;
 }
 
 .options-row {
-  background-color: rgb(215, 190, 164);
+  background-color: rgb(128, 112, 77);
 }
 
 .update-cell {
   margin-right: 20px;
+}
+
+body {
+  background-image: url('../images/elegant-bg.png');
+}
+
+#timer-container {
+  text-align: center;
+}
+
+#create-tea-container {
+  padding: 10px;
+  background: rgb(150, 176, 140);
+  display: inline;
+}
+
+#clear-space {
+  margin-top: 200px;
+}
+
+#status-box {
+  text-align: center;
+}
+
+#tea-message {
+  text-align: center;
 }
