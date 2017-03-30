@@ -23,8 +23,9 @@ th, td {
 
 h1 {
   text-align: center;
-  font-size: 80px;
+  font-size: 100px;
   color: rgb(51, 25, 14);
+  font-family: 'Kaushan Script', cursive;
 }
 
 th {
@@ -54,8 +55,9 @@ tr:hover {
 }
 
 #timer-done-message {
-  font-size: 60px;
+  font-size: 90px;
   color: green;
+  font-family: 'Fredoka One', cursive;
   animation: seesaw 2s ease infinite, blinker 1.25s linear infinite, colorchange 2s ease infinite;
 }
 
@@ -88,7 +90,7 @@ tr:hover {
 }
 
 .edit-delete-btns {
-  margin: 3px 50px;
+  margin: 6px 50px !important;
 }
 
 .options-row {
@@ -101,6 +103,7 @@ tr:hover {
 
 body {
   background-image: url('../images/elegant-bg.png');
+  font-family: 'Open Sans', sans-serif;
 }
 
 #timer-container {
@@ -132,4 +135,76 @@ body {
 
 #options-btn {
   float: right;
+}
+
+.btn {
+  box-shadow: 0 3px 0 0 rgb(60, 60, 60);
+  margin-bottom: 3px;
+}
+
+.btn:active {
+  box-shadow: none;
+  margin-bottom: -3px;
+  margin-top: 3px;
+}
+
+#auth-buttons {
+  margin: 5px 0;
+}
+
+.btn-auth {
+  background: rgb(92, 110, 140);
+  color: white;
+}
+
+.btn-auth:hover {
+  color: rgb(204, 216, 237);
+}
+
+.btn-auth:focus {
+  color: rgb(204, 216, 237);
+}
+
+.btn-delete {
+  background: rgb(107, 23, 21);
+  color: white;
+}
+
+.btn-delete:hover {
+  color: rgb(255, 200, 199);
+}
+
+.btn-delete:focus {
+  color: rgb(255, 200, 199);
+}
+
+.btn-tea-success {
+  background: rgb(69, 145, 69);
+  color: white;
+}
+
+.btn-tea-success:hover {
+  color: rgb(221, 237, 221);
+}
+
+.btn-tea-success:focus {
+  color: rgb(221, 237, 221);
+}
+
+.btn-steep {
+  background: rgb(110, 127, 110);
+  color: white;
+}
+
+.btn-steep:hover {
+  color: rgb(208, 213, 208);
+}
+
+.btn-steep:focus {
+  color: rgb(208, 213, 208);
+}
+
+select {
+  text-align: center;
+  text-align-last: center;
 }

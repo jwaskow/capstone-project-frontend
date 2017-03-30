@@ -81,6 +81,7 @@ const signOutSuccess = () => {
   $('.add-tea-select').prop('selectedIndex', 0)
   $('.add-tea-field').val('')
   $('#instructions').text('Welcome to Tea Time!  This app keeps track of your favorite teas and has a built in steep timer.  Sign up or sign in to get started!')
+  $('#tea-message').text('')
 }
 
 module.exports = {
