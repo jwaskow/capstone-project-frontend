@@ -2,6 +2,7 @@
 
 const teaApi = require('../tea/api')
 const teaUi = require('../tea/ui')
+const teaEvents = require('../tea/events')
 
 const success = () => {
   $('#status-box').text('Action Successful')
@@ -82,6 +83,7 @@ const signOutSuccess = () => {
   $('.add-tea-field').val('')
   $('#instructions').text('Welcome to Tea Time!  This app keeps track of your favorite teas and has a built in steep timer.  Sign up or sign in to get started!')
   $('#tea-message').text('')
+  teaEvents.clearIntSignOut()
 }
 
 module.exports = {

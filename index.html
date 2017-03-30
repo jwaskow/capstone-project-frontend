@@ -40,7 +40,7 @@
             <fieldset>
               <legend>Sign Up</legend>
               <label>
-            Email
+            Username
             <input type="text" maxlength="100" id="account-name" required="required" class="signup-field" name="credentials[email]">
           </label>
               <label>
@@ -63,7 +63,7 @@
            <fieldset>
              <legend>Sign In</legend>
              <label>
-             Email
+             Username
              <input type="text" class="signin-field" required="required" maxlength="100" id="account-name-signin" name="credentials[email]">
            </label>
              <label>
@@ -113,7 +113,7 @@
     <span>Tea Name</span>
     <input type="text" id="tea-name" required="required" class="add-tea-field" name="tea[name]" maxlength="150" placeholder="Name of Tea">
     <span>Type</span>
-    <select required="required" class="add-tea-select" name="tea[type]">
+    <select id="tea-type-select" required="required" class="add-tea-select" name="tea[type]">
       <option disabled selected value>-- Type --</option>
       <option value="Black">Black</option>
       <option value="Green">Green</option>
@@ -121,7 +121,7 @@
       <option value="Other">Other</option>
     </select>
     <span>Steep Time</span>
-    <select required="required" class="add-tea-select" name="tea[steepTime]">
+    <select id="tea-steeptime-select" required="required" class="add-tea-select" name="tea[steepTime]">
       <option disabled selected value>-- Steep Time --</option>
       <option value="30">30 seconds</option>
       <option value="60">1 minute</option>
