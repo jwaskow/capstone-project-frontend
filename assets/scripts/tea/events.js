@@ -14,7 +14,6 @@ const onIndexTeas = function (event) {
 const onCreateTeas = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.createTea(data)
   .then(ui.createSuccess)
   .then(api.indexTeas)
@@ -24,11 +23,8 @@ const onCreateTeas = function (event) {
 
 const onUpdateTea = function (event) {
   event.preventDefault()
-  console.log('input clicked')
   const id = event.target.getAttribute('data-id')
-  console.log(id)
   const data = getFormFields(event.target)
-  console.log(data)
   api.updateTea(id, data)
   .then(ui.updateSuccess)
   .then(api.indexTeas)
@@ -95,6 +91,11 @@ const endTimer = function (timerLogic) {
   clearInterval(timerLogic)
 }
 
+const clearIntSignOut = function () {
+  clearInterval(timerLogic)
+  isRunning = false
+}
+
 const loadTime = function (event) {
   event.preventDefault()
   const id = event.target.getAttribute('data-id')
@@ -141,5 +142,6 @@ module.exports = {
   onUpdateTea,
   addTeaHandlers,
   startTimer,
+  clearIntSignOut,
   endTimer
 }
