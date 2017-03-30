@@ -37,6 +37,11 @@ const signInSuccess = () => {
   $('#countdown-timer').show()
   $('#timer-done-message').show()
   $('#timer-wait-message').show()
+  $('#timer-main-text').text('')
+  $('#time').text('')
+  $('#timer-done-message').text('')
+  $('#timer-wait-message').text('')
+  $('#instructions').text("Use the form to the left to add teas to your collection.  When you're ready to make some tea, simply click 'steep' next to the desired tea.  The timer will let you know when it's Tea Time!")
   teaApi.indexTeas()
     .then(teaUi.indexSuccess)
 }
@@ -68,7 +73,14 @@ const signOutSuccess = () => {
   $('#countdown-timer').hide()
   $('#timer-done-message').hide()
   $('#timer-wait-message').hide()
+  $('#timer-main-text').text('')
+  $('#time').text('')
+  $('#timer-done-message').text('')
+  $('#timer-wait-message').text('')
   $('#cancel-timer-btn').hide()
+  $('.add-tea-select').prop('selectedIndex', 0)
+  $('.add-tea-field').val('')
+  $('#instructions').text('Welcome to Tea Time!  This app keeps track of your favorite teas and has a built in steep timer.  Sign up or sign in to get started!')
 }
 
 module.exports = {

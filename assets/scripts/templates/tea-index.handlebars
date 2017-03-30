@@ -6,7 +6,7 @@
     <th>Type</th>
     <th>Steep Time</th>
     <th>Description </th>
-    <th>Steep / Options</th>
+    <th>Start Steep Timer</th>
   </tr>
 
 {{#each teas as |tea|}}
@@ -30,7 +30,7 @@
          <div class="form-group">
 
            <span>Name</span>
-           <input type="text" class="update-cell" id="tea-name-update" name="tea[name]" value="{{tea.name}}" maxlength="150" placeholder="Name">
+           <input type="text" class="update-cell" required="required" id="tea-name-update" name="tea[name]" value="{{tea.name}}" maxlength="150" placeholder="Name">
 
            <span>Type</span>
            <select class="update-cell" name="tea[type]">
@@ -53,7 +53,7 @@
            </select>
 
            <span>Description</span>
-           <input type="text" name="tea[description]" id="tea-description-update" class="update-cell" value="{{tea.description}}" placeholder="taste, color..." maxlength="500">
+           <input type="text" name="tea[description]" required="required" id="tea-description-update" class="update-cell" value="{{tea.description}}" placeholder="taste, color..." maxlength="500">
 
          </div>
          <span></span>

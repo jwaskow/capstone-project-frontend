@@ -36,15 +36,15 @@
               <legend>Sign Up</legend>
               <label>
             Email
-            <input type="text" maxlength="100" id="account-name" class="signup-field" name="credentials[email]">
+            <input type="text" maxlength="100" id="account-name" required="required" class="signup-field" name="credentials[email]">
           </label>
               <label>
             Password
-            <input type="password" maxlength="100" class="signup-field" name="credentials[password]">
+            <input type="password" maxlength="100" required="required" class="signup-field" name="credentials[password]">
           </label>
               <label>
             Password Confirmation
-            <input type="password" maxlength="100" class="signup-field" name="credentials[password_confirmation]">
+            <input type="password" maxlength="100" required="required" class="signup-field" name="credentials[password_confirmation]">
           </label>
               <input type="submit" name="submit" value="Sign Up">
             </fieldset>
@@ -59,11 +59,11 @@
              <legend>Sign In</legend>
              <label>
              Email
-             <input type="text" class="signin-field" maxlength="100" id="account-name-signin" name="credentials[email]">
+             <input type="text" class="signin-field" required="required" maxlength="100" id="account-name-signin" name="credentials[email]">
            </label>
              <label>
              Password
-             <input type="password" class="signin-field" maxlength="100" name="credentials[password]">
+             <input type="password" class="signin-field" required="required" maxlength="100" name="credentials[password]">
            </label>
              <input type="submit" name="submit" maxlength="100" value="Sign In">
            </fieldset>
@@ -78,11 +78,11 @@
              <legend>Change Password</legend>
              <label>
              Current Password
-             <input type="password" class="change-pass-field" maxlength="100" name="passwords[old]">
+             <input type="password" class="change-pass-field" required="required" maxlength="100" name="passwords[old]">
            </label>
              <label>
              New Password
-             <input type="password" class="change-pass-field" maxlength="100" name="passwords[new]">
+             <input type="password" class="change-pass-field" required="required" maxlength="100" name="passwords[new]">
            </label>
              <input type="submit" name="submit" value="Change Password">
            </fieldset>
@@ -99,22 +99,24 @@
 
 <div id="tea-message"></div>
 
+<div class="col-xs-4" id="instructions">Welcome to Tea Time!  This app keeps track of your favorite teas and has a built in steep timer.  Sign up or sign in to get started!</div>
+
 <br>
 
-<form id="create-tea">
+<form class="col-xs-8" id="create-tea">
   <div class="form-group" id="create-tea-container">
-    <span>Name</span>
-    <input type="text" id="tea-name" name="tea[name]" maxlength="150" placeholder="Name">
+    <span>Tea Name</span>
+    <input type="text" id="tea-name" required="required" class="add-tea-field" name="tea[name]" maxlength="150" placeholder="Name of Tea">
     <span>Type</span>
-    <select name="tea[type]">
-      <option value="Black">Black</option>
+    <select class="add-tea-select" name="tea[type]">
+      <option selected value="Black">Black</option>
       <option value="Green">Green</option>
       <option value="White">White</option>
       <option value="Other">Other</option>
     </select>
     <span>Steep Time</span>
-    <select name="tea[steepTime]">
-      <option value="30">30 seconds</option>
+    <select class="add-tea-select" name="tea[steepTime]">
+      <option selected value="30">30 seconds</option>
       <option value="60">1 minute</option>
       <option value="90">1 minute 30 seconds</option>
       <option value="120">2 minutes</option>
@@ -124,7 +126,7 @@
       <option value="240">4 minutes</option>
     </select>
     <span>Description</span>
-    <input type="text" name="tea[description]" id="tea-description" placeholder="taste, color..." maxlength="500">
+    <input type="text" name="tea[description]" required="required" class="add-tea-field" id="tea-description" placeholder="taste, color..." maxlength="500">
     <br>
   </div>
 <br>
