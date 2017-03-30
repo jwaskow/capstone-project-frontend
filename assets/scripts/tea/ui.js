@@ -38,6 +38,8 @@ const createSuccess = () => {
   $('#tea-message').text('Tea Created.')
   $('#tea-name').val('')
   $('#tea-description').val('')
+  $('#tea-type-select option:eq(0)').prop('selected', true)
+  $('#tea-steeptime-select option:eq(0)').prop('selected', true)
 }
 
 const updateSuccess = () => {

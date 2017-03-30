@@ -58,15 +58,15 @@ tr:hover {
   font-size: 90px;
   color: green;
   font-family: 'Fredoka One', cursive;
-  animation: seesaw 2s ease infinite, blinker 1.25s linear infinite, colorchange 2s ease infinite;
+  animation: seesaw 2s ease infinite, blinker 1s linear infinite, colorchange 2s ease infinite;
 }
 
 @keyframes blinker {
-  0% { opacity: 1;}
-  25% { opacity: .5; }
+  0% { opacity: .75;}
+
   50% { opacity: 1;}
-  75% { opacity: .5; }
-  100% { opacity: 1;}
+
+  100% { opacity: .75;}
 }
 
 @keyframes colorchange {
