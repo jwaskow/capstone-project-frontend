@@ -20,6 +20,10 @@ const indexSuccess = function (data) {
       data.teas[i].steepTime = '3 minutes 30 seconds'
     } else if (data.teas[i].steepTime === 240) {
       data.teas[i].steepTime = '4 minutes'
+    } else if (data.teas[i].steepTime === 270) {
+      data.teas[i].steepTime = '4 minutes 30 seconds'
+    } else if (data.teas[i].steepTime === 300) {
+      data.teas[i].steepTime = '5 minutes'
     }
   }
   const teasIndexHtml = teaHandlebars({
@@ -31,7 +35,7 @@ const indexSuccess = function (data) {
 }
 
 const createSuccess = () => {
-  $('#status-box').text('Tea Created.')
+  $('#tea-message').text('Tea Created.')
   $('#tea-name').val('')
   $('#tea-description').val('')
 }

@@ -139,5 +139,7 @@ module.exports = {
   onCreateTeas,
   onIndexTeas,
   onUpdateTea,
-  addTeaHandlers
+  addTeaHandlers,
+  startTimer,
+  endTimer
 }
