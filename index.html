@@ -6,6 +6,9 @@
 
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -15,18 +18,20 @@
 
 <div id="authContainer">
   <div id="authButtonGroup">
-  <button class="btn btn-primary btn-font" id="signUpButton" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
+    <div id="auth-buttons">
+  <button class="btn btn-auth btn-font" id="signUpButton" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
     Sign Up
   </button>
-  <button class="btn btn-primary btn-font" id="signInButton" type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
+  <button class="btn btn-auth btn-font" id="signInButton" type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
     Sign In
   </button>
-  <button class="btn btn-primary hidden btn-font" id="changePassButton" type="button" data-toggle="collapse" data-target="#collapseChangePass" aria-expanded="false" aria-controls="collapseChangePass">
+  <button class="btn btn-auth hidden btn-font" id="changePassButton" type="button" data-toggle="collapse" data-target="#collapseChangePass" aria-expanded="false" aria-controls="collapseChangePass">
     Change Password
   </button>
-  <button type="button" class="btn btn-primary hidden btn-font" id="sign-out">
+  <button type="button" class="btn btn-auth hidden btn-font" id="sign-out">
     Sign Out
   </button>
+</div>
 
     <div class="accordion-group">
       <div class="collapse" id="collapseSignUp">
@@ -36,15 +41,15 @@
               <legend>Sign Up</legend>
               <label>
             Email
-            <input type="text" maxlength="100" id="account-name" class="signup-field" name="credentials[email]">
+            <input type="text" maxlength="100" id="account-name" required="required" class="signup-field" name="credentials[email]">
           </label>
               <label>
             Password
-            <input type="password" maxlength="100" class="signup-field" name="credentials[password]">
+            <input type="password" maxlength="100" required="required" class="signup-field" name="credentials[password]">
           </label>
               <label>
             Password Confirmation
-            <input type="password" maxlength="100" class="signup-field" name="credentials[password_confirmation]">
+            <input type="password" maxlength="100" required="required" class="signup-field" name="credentials[password_confirmation]">
           </label>
               <input type="submit" name="submit" value="Sign Up">
             </fieldset>
@@ -59,11 +64,11 @@
              <legend>Sign In</legend>
              <label>
              Email
-             <input type="text" class="signin-field" maxlength="100" id="account-name-signin" name="credentials[email]">
+             <input type="text" class="signin-field" required="required" maxlength="100" id="account-name-signin" name="credentials[email]">
            </label>
              <label>
              Password
-             <input type="password" class="signin-field" maxlength="100" name="credentials[password]">
+             <input type="password" class="signin-field" required="required" maxlength="100" name="credentials[password]">
            </label>
              <input type="submit" name="submit" maxlength="100" value="Sign In">
            </fieldset>
@@ -78,11 +83,11 @@
              <legend>Change Password</legend>
              <label>
              Current Password
-             <input type="password" class="change-pass-field" maxlength="100" name="passwords[old]">
+             <input type="password" class="change-pass-field" required="required" maxlength="100" name="passwords[old]">
            </label>
              <label>
              New Password
-             <input type="password" class="change-pass-field" maxlength="100" name="passwords[new]">
+             <input type="password" class="change-pass-field" required="required" maxlength="100" name="passwords[new]">
            </label>
              <input type="submit" name="submit" value="Change Password">
            </fieldset>
@@ -99,21 +104,25 @@
 
 <div id="tea-message"></div>
 
+<div class="col-xs-3" id="instructions">Welcome to Tea Time!  This app keeps track of your favorite teas and has a built in steep timer.  Sign up or sign in to get started!</div>
+
 <br>
 
-<form id="create-tea">
+<form class="col-xs-9" id="create-tea">
   <div class="form-group" id="create-tea-container">
-    <span>Name</span>
-    <input type="text" id="tea-name" name="tea[name]" maxlength="150" placeholder="Name">
+    <span>Tea Name</span>
+    <input type="text" id="tea-name" required="required" class="add-tea-field" name="tea[name]" maxlength="150" placeholder="Name of Tea">
     <span>Type</span>
-    <select name="tea[type]">
+    <select required="required" class="add-tea-select" name="tea[type]">
+      <option disabled selected value>-- Type --</option>
       <option value="Black">Black</option>
       <option value="Green">Green</option>
       <option value="White">White</option>
       <option value="Other">Other</option>
     </select>
     <span>Steep Time</span>
-    <select name="tea[steepTime]">
+    <select required="required" class="add-tea-select" name="tea[steepTime]">
+      <option disabled selected value>-- Steep Time --</option>
       <option value="30">30 seconds</option>
       <option value="60">1 minute</option>
       <option value="90">1 minute 30 seconds</option>
@@ -122,13 +131,15 @@
       <option value="180">3 minutes</option>
       <option value="210">3 minutes 30 seconds</option>
       <option value="240">4 minutes</option>
+      <option value="270">4 minutes 30 seconds</option>
+      <option value="300">5 minutes</option>
     </select>
     <span>Description</span>
-    <input type="text" name="tea[description]" id="tea-description" placeholder="taste, color..." maxlength="500">
+    <input type="text" name="tea[description]" required="required" class="add-tea-field" id="tea-description" placeholder="taste, color..." maxlength="500">
     <br>
   </div>
 <br>
-  <button type="submit" class="btn btn-success btn-font" id="add-tea-btn">Add Tea</button>
+  <button type="submit" class="btn btn-tea-success btn-font" id="add-tea-btn">Add Tea</button>
 </form>
 
 <div id="index-tea-container"></div>
