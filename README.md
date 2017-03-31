@@ -4,6 +4,14 @@
 
 ![Preview](http://i.imgur.com/Pa9iHWk.png)
 
+### Links
+
+Client Application: https://jwaskow.github.io/capstone-project-frontend/
+
+API Repository: https://github.com/jwaskow/capstone-project-express-api
+
+Deployed API: https://dry-oasis-74645.herokuapp.com/
+
 ### Technologies
 
 The front end of this application was built using HTML, CSS, Bootstrap, and Javascript for page structure and formatting.  jQuery and AJAX were used to communicate with the back end.  I chose this setup because jQuery and javascript explicitly communicate every action to the server, giving me more control over the events on the page.  The timer is built entirely with javascript and jQuery, and the Tea Time animation is CSS.
