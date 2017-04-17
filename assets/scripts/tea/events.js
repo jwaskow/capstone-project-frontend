@@ -59,6 +59,22 @@ let isRunning = false
 
 let timerLogic
 
+const audio = $('#alert-audio')
+let playing
+
+const audioPlay = function () {
+  playing = setInterval(function () {
+    audio[0].currentTime = 0
+    audio[0].play()
+  }, 1000)
+}
+
+const audioPause = function () {
+  audio[0].pause()
+  audio[0].currentTime = 0
+  clearInterval(playing)
+}
+
 const startTimer = function (duration, display) {
   isRunning = true
   let timer = duration
@@ -78,6 +94,7 @@ const startTimer = function (duration, display) {
       $('#timer-done-message').text('TEA   TIME')
       $('#timer-wait-message').text('')
       $('#timer-main-text').text('Your tea is ready!')
+      audioPlay()
       endTimer(timerLogic)
       isRunning = false
       return isRunning
@@ -94,6 +111,7 @@ const endTimer = function (timerLogic) {
 const clearIntSignOut = function () {
   clearInterval(timerLogic)
   isRunning = false
+  audioPause()
 }
 
 const loadTime = function (event) {
@@ -105,6 +123,7 @@ const loadTime = function (event) {
       $('#timer-done-message').text('')
       $('#timer-main-text').text('Your tea will be ready in ')
       $('#cancel-timer-btn').show()
+      audioPause()
       startTimer(data.tea.steepTime, $('#time'))
     } else {
       $('#timer-wait-message').text('Please cancel the current timer or wait for it to finish')
@@ -121,6 +140,7 @@ const cancelTimer = function (event) {
   $('#time').text('')
   $('#timer-done-message').text('')
   $('#timer-wait-message').text('')
+  audioPause()
   $('#cancel-timer-btn').hide()
 }
 
